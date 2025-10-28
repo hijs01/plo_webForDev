@@ -29,6 +29,8 @@ function DevCard({ dev, index }) {
         </p>
         <Button variant="outline" className="mt-3 text-blue-400 hover:text-blue-300">
           LinkedIn Profile
+
+
         </Button>
       </div>
     </div>
