@@ -9,8 +9,8 @@ const ProjectPage = () => {
             <Header />
         </div>
         
-        <div className="bg-neutral-800">
-
+        <div className="bg-neutral-800 min-h-screen pt-16">
+            <h1 className="text-white">Hello</h1>
         </div>
         </>
         
