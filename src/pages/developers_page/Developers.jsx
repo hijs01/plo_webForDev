@@ -9,12 +9,7 @@ const DeveloperPage = () => {
         <div>
             <Header />
         </div>
-        <main>
-            <h2 className="text-2xl">
-                Meet the PLO Devs Team
-            </h2>
-        </main>
-        <div className="bg-neutral-800">
+        <div >
             <div>
              <DevInfo />
             </div>
