@@ -1,6 +1,8 @@
-import Header from "@/components/layout/Header";
 import React from "react";
-import DevInfo from "./dev_info/DevInfo.jsx";
+import Header from "@/components/layout/Header";
+import DevInfo from "./dev_info/DevInfo";
+import JoinUsMessage from "./footerMessage/JoinUs";
+import Footer from "@/components/layout/home/Footer";
 
 
 const DeveloperPage = () => {
@@ -13,6 +15,10 @@ const DeveloperPage = () => {
             <div>
              <DevInfo />
             </div>
+        </div>
+        <div>
+          <JoinUsMessage />
+          <Footer />
         </div>
         </>
 

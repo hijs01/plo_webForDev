@@ -11,7 +11,7 @@ function DevCard({ dev, index }) {
   const textDir  = isEven ? "sm:text-left" : "sm:text-right";
   const alignBox = isEven ? "sm:items-start" : "sm:items-end";
   const translate = isEven ? "sm:-translate-x-6" : "sm:translate-x-6";
-  const alignSelf = isEven ? "md:ml-[4vw] md:self-start" : "md:mr-[4vw] md:self-end";
+  const alignSelf = isEven ? "md:ml-12 lg:ml-16 md:self-start" : "md:mr-12 lg:mr-16 md:self-end";
 
   // ✅ 여기 추가해야 함
   const [ref, isVisible] = useScrollReveal();
@@ -27,7 +27,7 @@ function DevCard({ dev, index }) {
         p-10 rounded-2xl shadow-xl
         bg-neutral-900/70 backdrop-blur-xl border border-neutral-800 
         transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(100,100,255,0.25)]
-        w-full max-w-3xl md:max-w-4xl
+        w-full max-w-4xl
         ${rowDir} ${translate} ${alignSelf}
       `}
     >
