@@ -23,6 +23,8 @@ export const teamA = [
   { name: "Jeongsoo Lee", role: "Team A Leader / Developer", TechStack: "Java, React, JavaScript, CSS, MongoDB, MySQL", linkedinUrl: "https://www.linkedin.com/in/jeongsoo-lee-a85a12171/?locale=en_US", githubUrl: "https://github.com/jeongsoo-lee" ,avatarUrl: "jeongsoo.jpg"},
   { name: "Jisung Park", role: "Developer", TechStack: "Java, React, JavaScript, CSS, MongoDB, MySQL", linkedinUrl: "https://www.linkedin.com/in/jisung-park-ba2245327/", githubUrl: "https://github.com/jisung-park" ,avatarUrl: "jisung.jpg"},
   { name: "Jungmin Sul", role: "Developer", TechStack: "Java, React, JavaScript, CSS, MongoDB, MySQL", linkedinUrl: "https://www.linkedin.com/in/jungmin-sul-0b3345349/", githubUrl: "https://github.com/sulmin-jeong" ,avatarUrl: "sulmin.jpg"},
+  { name: "Hoojin Yoon", role: "Developer", TechStack: "Java, React, JavaScript, CSS, MongoDB, MySQL", linkedinUrl: "www.linkedin.com/in/hojin-yoon-a6378b325", githubUrl: "https://github.com/hojinyoon" ,avatarUrl: "hoojin.jpg"},
+  { name: "Sungil Yun", role: "Developer", TechStack: "Java, React, JavaScript, CSS, MongoDB, MySQL", linkedinUrl: "linkedin.com/in/meseongilyun", githubUrl: "https://github.com/seongilyun", avatarUrl: "sungil.jpg"},
 ];
 
 export const teamB = [

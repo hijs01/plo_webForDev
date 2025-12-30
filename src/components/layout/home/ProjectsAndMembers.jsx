@@ -15,6 +15,8 @@ import jeongsooImg from "@/assets/jeongsoo lee.jpg";
 import jisungImg from "@/assets/jisung.jpg";
 import jungminImg from "@/assets/jungmin.jpg";
 import kiseongImg from "@/assets/kiseong.jpg";
+import hoojinImg from "@/assets/hoojin.jpg";
+import sungilImg from "@/assets/sungil.jpg";
 
 // Avatar map for member images
 const avatarMap = {
@@ -24,6 +26,8 @@ const avatarMap = {
   "Jeongsoo Lee": jeongsooImg,
   "Jisung Park": jisungImg,
   "Jungmin Sul": jungminImg,
+  "Hoojin Yoon": hoojinImg,
+  "Sungil Yun": sungilImg,
 };
 
 function ProjectsAndMembers() {
@@ -106,9 +110,9 @@ function ProjectsAndMembers() {
                     className="border-neutral-800 bg-neutral-900/60"
                   >
                     <CardContent className="flex items-center gap-3 pt-6 pb-4">
-                      <Avatar className="h-12 w-12">
+                      <Avatar className="h-12 w-12 overflow-hidden">
                         {avatarMap[member.name] && (
-                          <AvatarImage src={avatarMap[member.name]} alt={member.name} />
+                          <AvatarImage src={avatarMap[member.name]} alt={member.name} className="object-cover w-full h-full" />
                         )}
                         <AvatarFallback className="bg-neutral-700 text-white text-xs">
                           {initials}

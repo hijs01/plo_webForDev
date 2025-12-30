@@ -13,6 +13,8 @@ import jeongsooImg from "@/assets/jeongsoo lee.jpg";
 import jisungImg from "@/assets/jisung.jpg";
 import jungminImg from "@/assets/jungmin.jpg";
 import kiseongImg from "@/assets/kiseong.jpg";
+import hoojinImg from "@/assets/hoojin.jpg";
+import sungilImg from "@/assets/sungil.jpg";
 
 
 function DevCard({ dev, index }) {
@@ -28,6 +30,8 @@ function DevCard({ dev, index }) {
     "Jeongsoo Lee": jeongsooImg,
     "Jisung Park": jisungImg,
     "Jungmin Sul": jungminImg,
+    "Hoojin Yoon": hoojinImg,
+    "Sungil Yun": sungilImg,
   };
 
 
@@ -70,9 +74,9 @@ function DevCard({ dev, index }) {
           <div className="relative">
             {/* 아바타 그라데이션 링 */}
             <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500/50 via-purple-500/50 to-pink-500/50 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10" />
-            <Avatar className="h-24 w-24 border-2 border-neutral-700/50 group-hover:border-blue-500/50 transition-all duration-500 shadow-lg shadow-neutral-900/50 group-hover:shadow-blue-500/20">
+            <Avatar className="h-28 w-28 border-2 border-neutral-700/50 group-hover:border-blue-500/50 transition-all duration-500 shadow-lg shadow-neutral-900/50 group-hover:shadow-blue-500/20 overflow-hidden">
               {avatarMap[dev.name] && (
-                <AvatarImage src={avatarMap[dev.name]} alt={dev.name} />
+                <AvatarImage src={avatarMap[dev.name]} alt={dev.name} className="object-cover w-full h-full" />
               )}
               <AvatarFallback className="bg-neutral-800 text-neutral-200 text-lg font-semibold">
                 {initials}
