@@ -1,5 +1,6 @@
 // src/components/home/HeroSection.jsx
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../../ui/card";
 import { Badge } from "../../ui/badge";
@@ -8,6 +9,8 @@ import { Sparkles, Github, ArrowRight, Users } from "lucide-react";
 import { stack } from "../../../pages/data/homeData";
 
 function HeroSection() {
+  const navigate = useNavigate();
+
   return (
     <section className="flex  min-h-[80vh]   flex-col gap-10 md:flex-row md:items-center md:justify-between mt-10">
       {/* 왼쪽: 소개 텍스트 */}
@@ -25,15 +28,15 @@ function HeroSection() {
             </span>
           </h1>
           <p className="text-neutral-400">
-            PLO Devs는 개발자들이 모여 사이드 프로젝트를 만들고,
-            오픈소스에 기여하고, 서로 성장하는 커뮤니티입니다.
+            PLO Devs is a community where developers come together to build side projects,
+            contribute to open source, and grow together.
             <br />
-            학교 과제도, 실무 감각도, 같이 쌓아봅시다.
+            Let's build both academic projects and real-world experience together.
           </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-3">
-          <Button size="lg" className="gap-2">
+          <Button size="lg" className="gap-2" onClick={() => navigate("/signup")}>
             Join the team
             <ArrowRight className="h-4 w-4" />
           </Button>
@@ -48,8 +51,8 @@ function HeroSection() {
         </div>
 
         <p className="text-md text-neutral-400 font-bold">
-          Be ready to <span >야근</span>.{" "}
-          <span className="text-neutral-400 font-bold">하지만 혼자 말고, 같이.</span>
+          Be ready to <span>work late</span>.{" "}
+          <span className="text-neutral-400 font-bold">But not alone, together.</span>
         </p>
       </div>
 
@@ -62,7 +65,7 @@ function HeroSection() {
               Current Focus
             </CardTitle>
             <CardDescription>
-              실사용 가능한 서비스 & 스타트업 레벨 프로젝트
+              Production-ready services & startup-level projects
             </CardDescription>
           </CardHeader>
           <CardContent className="space-y-3">
@@ -86,9 +89,9 @@ function HeroSection() {
             <Separator className="bg-neutral-800" />
 
             <div className="space-y-2 text-sm text-neutral-300">
-              <p>✅ 실전 프로젝트 중심</p>
-              <p>✅ 취업 / 인턴 포트폴리오 빌딩</p>
-              <p>✅ 코드 리뷰 & 스터디 문화</p>
+              <p>✅ Real-world project focus</p>
+              <p>✅ Job & internship portfolio building</p>
+              <p>✅ Code review & study culture</p>
             </div>
           </CardContent>
         </Card>

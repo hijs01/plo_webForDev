@@ -7,18 +7,43 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+# Dependency directories
+node_modules/
 
-# Editor directories and files
+# Production build output
+dist/
+dist-ssr/
+build/
+
+# Local environment files (VERY IMPORTANT)
+.env
+.env.local
+.env.development
+.env.production
+.env.*        # ignore all env variants
+
+# Supabase local config
+supabase/.branches
+supabase/.temp
+supabase/.env
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE files
 .vscode/*
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+*.iml
+
+# TypeScript
+*.tsbuildinfo
+
+# Misc
+*.local

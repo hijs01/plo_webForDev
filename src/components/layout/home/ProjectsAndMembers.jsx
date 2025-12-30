@@ -3,8 +3,28 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter }
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 
-import { projects, team } from "@/pages/data/homeData";
+import { projects } from "@/pages/data/homeData";
+import { allTeamMembers } from "@/pages/developers_page/dev_info/DevInfo";
+
+// Import images
+import woojoImg from "@/assets/woojo.jpg";
+import taehyunImg from "@/assets/taehyun.jpg";
+import jeongsooImg from "@/assets/jeongsoo lee.jpg";
+import jisungImg from "@/assets/jisung.jpg";
+import jungminImg from "@/assets/jungmin.jpg";
+import kiseongImg from "@/assets/kiseong.jpg";
+
+// Avatar map for member images
+const avatarMap = {
+  "Woojoo Song": woojoImg,
+  "Taehyun Kim": taehyunImg,
+  "Kiseong Kim": kiseongImg,
+  "Jeongsoo Lee": jeongsooImg,
+  "Jisung Park": jisungImg,
+  "Jungmin Sul": jungminImg,
+};
 
 function ProjectsAndMembers() {
     return (
@@ -15,7 +35,7 @@ function ProjectsAndMembers() {
         </h2>
   
         <p className="text-neutral-400 text-center">
-          우리 팀과 팀이 만드는 프로젝트를 한눈에 보고 싶다면 ↓
+          Want to see our team and projects at a glance? ↓
         </p>
   
         {/* 1열 전체 레이아웃 */}
@@ -71,23 +91,38 @@ function ProjectsAndMembers() {
             <h3 className="text-2xl font-semibold text-white">Core Members</h3>
   
             <div className="grid gap-6 md:grid-cols-3">
-              {team.map((member) => (
-                <Card
-                  key={member.name}
-                  className="border-neutral-800 bg-neutral-900/60"
-                >
-                  <CardContent className="flex items-center gap-3 pt-6 pb-4">
-                    <div className="w-12 h-12 rounded-full bg-neutral-700 flex items-center justify-center text-white">
-                      {member.initials}
-                    </div>
-  
-                    <div>
-                      <p className="text-sm font-medium text-white">{member.name}</p>
-                      <p className="text-xs text-neutral-400">{member.role}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
+              {allTeamMembers.map((member) => {
+                // Generate initials from name
+                const initials = member.name
+                  .split(" ")
+                  .map((n) => n[0])
+                  .join("")
+                  .slice(0, 2)
+                  .toUpperCase();
+
+                return (
+                  <Card
+                    key={member.name}
+                    className="border-neutral-800 bg-neutral-900/60"
+                  >
+                    <CardContent className="flex items-center gap-3 pt-6 pb-4">
+                      <Avatar className="h-12 w-12">
+                        {avatarMap[member.name] && (
+                          <AvatarImage src={avatarMap[member.name]} alt={member.name} />
+                        )}
+                        <AvatarFallback className="bg-neutral-700 text-white text-xs">
+                          {initials}
+                        </AvatarFallback>
+                      </Avatar>
+
+                      <div>
+                        <p className="text-sm font-medium text-white">{member.name}</p>
+                        <p className="text-xs text-neutral-400">{member.role}</p>
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
   

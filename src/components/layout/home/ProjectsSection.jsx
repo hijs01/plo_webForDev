@@ -19,7 +19,7 @@ function ProjectsSection() {
         <div>
           <h2 className="text-2xl font-semibold">Featured Projects</h2>
           <p className="text-sm text-neutral-400">
-            지금 PLO Devs가 집중하고 있는 프로젝트들입니다.
+            Projects that PLO Devs is currently focusing on.
           </p>
         </div>
         <Button variant="ghost" className="text-sm text-neutral-300">

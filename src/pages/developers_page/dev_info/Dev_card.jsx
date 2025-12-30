@@ -22,12 +22,12 @@ function DevCard({ dev, index }) {
     dev.TechStack?.split(",").map((t) => t.trim()).filter(Boolean) || [];
 
   const avatarMap = {
-    "송우주": woojoImg,
-    "김태현": taehyunImg,
-    "김기성": kiseongImg,
-    "이정수": jeongsooImg,
-    "박지성": jisungImg,
-    "설정민": jungminImg,
+    "Woojoo Song": woojoImg,
+    "Taehyun Kim": taehyunImg,
+    "Kiseong Kim": kiseongImg,
+    "Jeongsoo Lee": jeongsooImg,
+    "Jisung Park": jisungImg,
+    "Jungmin Sul": jungminImg,
   };
 
 

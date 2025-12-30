@@ -4,21 +4,21 @@ export const projects = [
     {
       name: "Tago (Taxi Sharing App)",
       description:
-        "PSU 한국인 커뮤니티를 위한 택시 쉐어링 앱. Flutter + Firebase 기반으로 개발 중.",
+        "Taxi sharing app for the PSU Korean community. Built with Flutter + Firebase.",
       tech: ["Flutter", "Firebase", "MVVM"],
       href: "#",
     },
     {
       name: "Hive AID Certification Platform",
       description:
-        "AI 기반 위변조 탐지 & 리포트 발급 플랫폼. React + Node.js + AWS.",
+        "AI-based fraud detection & report issuance platform. React + Node.js + AWS.",
       tech: ["React", "Node.js", "AWS", "S3", "RDS"],
       href: "#",
     },
     {
       name: "PLO Devs Website",
       description:
-        "PLO Devs 개발자 커뮤니티 공식 웹사이트, 오픈소스로 운영 예정.",
+        "Official website for the PLO Devs developer community, planned to be open source.",
       tech: ["React", "shadcn/ui", "Tailwind CSS"],
       href: "#",
     },
