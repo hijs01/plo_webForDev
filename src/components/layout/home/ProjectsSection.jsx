@@ -10,7 +10,7 @@ import {
   CardFooter,
 } from "../../ui/card";
 import { Badge } from "../../ui/badge";
-import { projects } from "../../../pages/data/homeData";
+import { projects } from "../../../pages/data/totalData";
 
 function ProjectsSection() {
   return (
@@ -19,7 +19,7 @@ function ProjectsSection() {
         <div>
           <h2 className="text-2xl font-semibold">Featured Projects</h2>
           <p className="text-sm text-neutral-400">
-            Projects that PLO Devs is currently focusing on.
+            Projects that CUCO is currently focusing on.
           </p>
         </div>
         <Button variant="ghost" className="text-sm text-neutral-300">

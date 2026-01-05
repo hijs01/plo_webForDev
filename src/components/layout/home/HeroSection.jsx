@@ -6,7 +6,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "../..
 import { Badge } from "../../ui/badge";
 import { Separator } from "../../ui/separator";
 import { Sparkles, Github, ArrowRight, Users } from "lucide-react";
-import { stack } from "../../../pages/data/homeData";
+import { stack } from "../../../pages/data/totalData";
 
 function HeroSection() {
   const navigate = useNavigate();
@@ -17,18 +17,18 @@ function HeroSection() {
       <div className="space-y-6 max-w-xl">
         <div className="inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/70 px-3 py-1 text-xs text-neutral-300">
           <Sparkles className="h-3 w-3" />
-          <span>PLO Devs · Developer Community @ PSU</span>
+          <span>CUCO · Developer Community @ PSU</span>
         </div>
 
         <div className="space-y-3">
           <h1 className="text-4xl md:text-5xl font-semibold tracking-tight">
             Welcome to{" "}
             <span className="bg-gradient-to-r from-sky-400 to-violet-400 bg-clip-text text-transparent">
-              PLO Devs
+              CUCO
             </span>
           </h1>
           <p className="text-neutral-400">
-            PLO Devs is a community where developers come together to build side projects,
+            CUCO is a community where developers come together to build side projects,
             contribute to open source, and grow together.
             <br />
             Let's build both academic projects and real-world experience together.

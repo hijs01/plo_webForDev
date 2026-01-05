@@ -1,6 +1,4 @@
 import React from "react";
-import { Separator } from "@/components/ui/separator";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 import DevCard from "./Dev_card";
 import TitleSection from "@/components/developer_page/TitleSection";
 
@@ -8,7 +6,7 @@ import TitleSection from "@/components/developer_page/TitleSection";
 const teamA_summary = [
   "TAGO, TAXI Sharing App implementation and development",
   "AID Certification Platform implementation and development",
-  "PLO DEV Website implementation and development",
+  "CUCO Website implementation and development",
 ];
 
 const teamB_summary = [
@@ -39,98 +37,28 @@ export const allTeamMembers = [
 ];
 
 const DevInfo = () => {
+  // 모든 팀 멤버를 하나로 합치기 (중복 제거)
+  const allMembers = [
+    ...teamA,
+    ...teamB.filter(member => !teamA.some(teamAMember => teamAMember.name === member.name))
+  ];
 
   return (
     <main className="pt-24 pb-24 px-4 text-white">
       {/* ===== 제목 ===== */}
       <div>
-
         <TitleSection
-          title="Meet the PLO Devs"
-          subtitle="Meet passionate developers by team."
-          leftLabel="Team A"
-          rightLabel="Team B"
-          leftItems={teamA_summary}
-          rightItems={teamB_summary}
+          title="Meet the CUCO"
+          subtitle="Meet passionate developers working together to build amazing projects."
         />
-
       </div>
 
-      {/* ===== Tabs 영역 ===== */}
-      <Tabs defaultValue="teamA" className="w-full">
-
-        <div className="flex justify-center mb-10 px-4 w-full">
-          <TabsList
-            className="
-              flex
-              w-full
-              max-w-4xl    
-              mx-auto
-              justify-between
-              bg-neutral-900 
-              border border-neutral-800 
-              rounded-full 
-              p-5
-              gap-4
-            "
-          >
-            <TabsTrigger
-              value="teamA"
-              className="
-                flex-1
-                text-center
-                py-3 
-                px-4 
-                text-sm font-semibold
-                rounded-full
-                text-neutral-200
-                hover:bg-neutral-700/40
-                transition-all
-
-              "
-            >
-              Team A
-            </TabsTrigger>
-
-            <TabsTrigger
-              value="teamB"
-              className="
-                flex-1
-                text-center
-                py-3 
-                px-4 
-                text-sm font-semibold
-                rounded-full
-                text-neutral-200
-                hover:bg-neutral-700/40
-                transition-all
-              "
-            >
-              Team B
-            </TabsTrigger>
-          </TabsList>
-        </div>
-
-        {/* ===== Team A ===== */}
-        <TabsContent value="teamA">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4 md:px-8">
-            {teamA.map((dev, index) => (
-              <DevCard key={dev.name} dev={dev} index={index} />
-            ))}
-          </div>
-        </TabsContent>
-
-        {/* ===== Team B ===== */}
-        <TabsContent value="teamB">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4 md:px-8">
-            {teamB.map((dev, index) => (
-              <DevCard key={dev.name} dev={dev} index={index} />
-            ))}
-          </div>
-        </TabsContent>
-
-      </Tabs>
-
+      {/* ===== 모든 개발자 ===== */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8 px-4 md:px-8 max-w-6xl mx-auto">
+        {allMembers.map((dev, index) => (
+          <DevCard key={`${dev.name}-${index}`} dev={dev} index={index} />
+        ))}
+      </div>
     </main>
   );
 };

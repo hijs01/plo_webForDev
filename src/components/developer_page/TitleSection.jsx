@@ -3,6 +3,8 @@ import { Separator } from "@/components/ui/separator";
 import { motion } from "framer-motion";
 
 function TitleSection({ title, subtitle, leftLabel, rightLabel, leftItems = [], rightItems = [] }) {
+  // Team A/B 관련 props가 없으면 간단한 버전으로 렌더링
+  const hasTeamInfo = leftLabel && rightLabel;
 
   const listVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -54,69 +56,85 @@ function TitleSection({ title, subtitle, leftLabel, rightLabel, leftItems = [], 
         {subtitle}
       </motion.p>
 
-      {/* ==== Team A | Team B row ==== */}
+      {/* ==== Divider (짧은 선에서 길어지는 애니메이션) ==== */}
       <motion.div
-        variants={containerVariants}
-        className="flex items-center justify-center gap-10 mt-10"
-      >
-        <motion.span
-          variants={listVariants}
-          className="text-neutral-300 font-semibold text-2xl"
-        >
-          {leftLabel}
-        </motion.span>
+        initial={{ width: 0, opacity: 0 }}
+        whileInView={{ width: "100%", opacity: 1 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{
+          duration: 1,
+          delay: 0.4,
+          ease: [0.16, 1, 0.3, 1],
+        }}
+        className="h-[2px] bg-gradient-to-r from-transparent via-neutral-500 to-transparent mx-auto max-w-2xl"
+      />
 
-        {/* Separator 애니메이션 (width 0 → 40px) */}
-        <motion.div
-          initial={{ width: 0, opacity: 0 }}
-          whileInView={{ width: 850, opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="h-[2px] bg-neutral-700"
-        />
-
-        <motion.span
-          variants={listVariants}
-          className="text-neutral-300 font-semibold text-2xl"
-        >
-          {rightLabel}
-        </motion.span>
-      </motion.div>
-
-      {/* ==== Team A / Team B – summary lists ==== */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-12">
-
-        {/* LEFT TEAM LIST */}
-        <motion.div
-          variants={containerVariants}
-          className="space-y-4"
-        >
-          {leftItems.map((item, idx) => (
-            <motion.p
-              key={idx}
+      {/* ==== Team A | Team B row (조건부 렌더링) ==== */}
+      {hasTeamInfo && (
+        <>
+          <motion.div
+            variants={containerVariants}
+            className="flex items-center justify-center gap-10 mt-10"
+          >
+            <motion.span
               variants={listVariants}
-              className="text-neutral-400 text-lg leading-relaxed"
+              className="text-neutral-300 font-semibold text-2xl"
             >
-              • {item}
-            </motion.p>
-          ))}
-        </motion.div>
+              {leftLabel}
+            </motion.span>
 
-        {/* RIGHT TEAM LIST */}
-        <motion.div
-          variants={containerVariants}
-          className="space-y-4"
-        >
-          {rightItems.map((item, idx) => (
-            <motion.p
-              key={idx}
+            {/* Separator 애니메이션 (width 0 → 40px) */}
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              whileInView={{ width: 850, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="h-[2px] bg-neutral-700"
+            />
+
+            <motion.span
               variants={listVariants}
-              className="text-neutral-400 text-lg leading-relaxed"
+              className="text-neutral-300 font-semibold text-2xl"
             >
-              • {item}
-            </motion.p>
-          ))}
-        </motion.div>
-      </div>
+              {rightLabel}
+            </motion.span>
+          </motion.div>
+
+          {/* ==== Team A / Team B – summary lists ==== */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mt-12">
+            {/* LEFT TEAM LIST */}
+            <motion.div
+              variants={containerVariants}
+              className="space-y-4"
+            >
+              {leftItems.map((item, idx) => (
+                <motion.p
+                  key={idx}
+                  variants={listVariants}
+                  className="text-neutral-400 text-lg leading-relaxed"
+                >
+                  • {item}
+                </motion.p>
+              ))}
+            </motion.div>
+
+            {/* RIGHT TEAM LIST */}
+            <motion.div
+              variants={containerVariants}
+              className="space-y-4"
+            >
+              {rightItems.map((item, idx) => (
+                <motion.p
+                  key={idx}
+                  variants={listVariants}
+                  className="text-neutral-400 text-lg leading-relaxed"
+                >
+                  • {item}
+                </motion.p>
+              ))}
+            </motion.div>
+          </div>
+        </>
+      )}
     </motion.div>
   );
 }

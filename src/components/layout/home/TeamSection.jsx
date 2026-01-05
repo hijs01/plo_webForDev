@@ -20,7 +20,7 @@ function TeamSection() {
       <div>
         <h2 className="text-2xl font-semibold">Core Members</h2>
         <p className="text-sm text-neutral-400">
-          Core members of PLO Devs. More to be added soon 👀
+          Core members of CUCO. More to be added soon 👀
         </p>
       </div>
 
