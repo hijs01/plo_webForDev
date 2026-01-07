@@ -26,8 +26,10 @@ const ApplyForm = () => {
         setLoading(true);
 
         try {
-            // 1) 파일 업로드
+            // 1) 파일 업로드 (보안: UUID 사용, 개인정보 노출 방지)
             const ext = cvFile.name.split(".").pop();
+            const originalFileName = cvFile.name; // 원본 파일명 저장용
+            // UUID로 안전한 파일명 생성 (개인정보 노출 방지)
             const filename = `${crypto.randomUUID()}.${ext}`;
             const filePath = `resumes/${filename}`;
 
@@ -44,7 +46,7 @@ const ApplyForm = () => {
                 setLoading(false);
                 return;
             }
-            // 3) DB에 insert
+            // 3) DB에 insert (원본 파일명도 함께 저장)
             const { error: insertError } = await supabase
                 .from("applications")
                 .insert([
@@ -54,6 +56,7 @@ const ApplyForm = () => {
                         major,
                         email,
                         resume_url: filePath,
+                        original_filename: originalFileName, // 원본 파일명 저장 (관리용)
                     },
                 ]);
 
