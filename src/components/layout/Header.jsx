@@ -38,10 +38,10 @@ const Header = () => {
   const headerHeight = isSmallMobile ? "h-14" : "h-16";
   const logoTextSize = isSmallMobile ? "text-lg" : isMobile ? "text-xl" : "text-2xl";
   const logoSubtextSize = isSmallMobile ? "text-[9px]" : "text-xs";
-  const navGap = isSmallMobile ? "gap-0.5" : isMobile ? "gap-1" : "gap-4";
-  const navTextSize = isSmallMobile ? "text-[10px]" : isMobile ? "text-xs" : "text-base";
-  const navPadding = isSmallMobile ? "px-1" : isMobile ? "px-2" : "px-4";
-  const buttonTextSize = isSmallMobile ? "text-[10px]" : isMobile ? "text-xs" : "text-sm";
+  const navGap = isSmallMobile ? "gap-1" : isMobile ? "gap-2" : "gap-4";
+  const navTextSize = isSmallMobile ? "text-xs" : isMobile ? "text-sm" : "text-base";
+  const navPadding = isSmallMobile ? "px-2" : isMobile ? "px-3" : "px-4";
+  const buttonTextSize = isSmallMobile ? "text-xs" : isMobile ? "text-sm" : "text-sm";
   const buttonPadding = isSmallMobile ? "px-2" : isMobile ? "px-3" : "px-4";
   const containerPadding = isSmallMobile ? "px-2" : isMobile ? "px-4" : "px-8";
 
