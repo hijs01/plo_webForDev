@@ -9,7 +9,7 @@ import Success from "./pages/signup_page/Success";
 function App() {
   return (
     <Routes>
-       <Route path="/" element={<Navigate to="/home" replace />} />
+      <Route path="/" element={<HomePage />} />
       <Route path="/home" element={<HomePage />} />
       <Route path="/about" element={<HomePage />} />
       <Route path="/developers" element={<DeveloperPage />} />
