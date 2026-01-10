@@ -41,8 +41,8 @@ const Header = () => {
   const navGap = isSmallMobile ? "gap-1" : isMobile ? "gap-2" : "gap-4";
   const navTextSize = isSmallMobile ? "text-xs" : isMobile ? "text-sm" : "text-base";
   const navPadding = isSmallMobile ? "px-2" : isMobile ? "px-3" : "px-4";
-  const buttonTextSize = isSmallMobile ? "text-xs" : isMobile ? "text-sm" : "text-sm";
-  const buttonPadding = isSmallMobile ? "px-2" : isMobile ? "px-3" : "px-4";
+  const buttonTextSize = isSmallMobile ? "text-sm" : isMobile ? "text-base" : "text-sm";
+  const buttonPadding = isSmallMobile ? "px-3" : isMobile ? "px-4" : "px-4";
   const containerPadding = isSmallMobile ? "px-2" : isMobile ? "px-4" : "px-8";
 
   return (
@@ -123,7 +123,7 @@ const Header = () => {
           {/* 우측 버튼 영역 */}
           <div className="flex items-center gap-1 sm:gap-2 md:gap-3 flex-shrink-0">
             <Button
-              className={`bg-neutral-50 text-black font-medium ${buttonTextSize} hover:bg-neutral-200 transition ${buttonPadding} py-1 sm:py-2`}
+              className={`bg-neutral-50 text-black font-medium ${buttonTextSize} hover:bg-neutral-200 transition ${buttonPadding} ${isSmallMobile ? "py-2" : isMobile ? "py-2.5" : "py-2"}`}
               onClick={() => navigate("/signup")}>
               {isSmallMobile ? "Join" : "Join Us"}
             </Button>
