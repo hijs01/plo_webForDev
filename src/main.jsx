@@ -7,7 +7,7 @@ import "./index.css";
 
 createRoot(document.getElementById("root")).render(
 
-    <BrowserRouter basename="/plo_webForDev">
+    <BrowserRouter basename="/CUCO_website">
       <App />
     </BrowserRouter>
 );
